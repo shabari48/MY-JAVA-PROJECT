@@ -38,6 +38,7 @@ public class mymain {
             user.setweight(weight);
         }
         hi.findbmi(height, weight);
+        hi.findbmr(height, weight, age, gender);
 
     }
 }
