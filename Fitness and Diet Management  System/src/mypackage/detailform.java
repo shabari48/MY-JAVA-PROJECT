@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-class MyFrame
+class detailform
         extends JFrame
         implements ActionListener {
 
@@ -26,11 +26,11 @@ class MyFrame
     private JButton sub;
     private JLabel res;
     private JLabel ag;
-    private JTextArea tag;
+    public JTextArea tag;
     private JLabel wg;
-    private JTextArea wag;
+    public JTextArea wag;
 
-    public MyFrame() {
+    public detailform() {
         setTitle("Fitness and Diet Management System");
         setBounds(300, 90, 500, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -154,9 +154,6 @@ class MyFrame
         setVisible(true);
     }
 
-    // method actionPerformed()
-    // to get the action performed
-    // by the user and act accordingly
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == sub) {
             if (term.isSelected()) {
@@ -175,6 +172,13 @@ class MyFrame
                 String data2 = "Age : " + tadd.getText() + "\n";
                 String data3 = "Height : " + tag.getText() + "\n";
                 String data4 = "Weight : " + wag.getText() + "\n";
+
+                if (male.isSelected()) {
+                    healthindex hi = new healthindex(tag.getText(), wag.getText(), tadd.getText(), "male");
+                } else {
+                    healthindex hi = new healthindex(tag.getText(), wag.getText(), tadd.getText(), "female");
+                }
+
                 try {
                     FileOutputStream fos = new FileOutputStream(tname.getText() + ".txt");
                     fos.write((data + data1 + data2 + data3 + data4).getBytes());

@@ -2,14 +2,24 @@ package mypackage;
 
 public class healthindex {
     double bmi, bmr;
-    User user;
+    double weight;
+    double height;
+    int age;
+    String gender;
 
-    void findbmi(double height, double weight) {
+    healthindex(String s1, String s2, String s3, String s4) {
+        height = Double.parseDouble(s1);
+        weight = Double.parseDouble(s2);
+        age = Integer.parseInt(s3);
+        gender = s4;
+    }
+
+    void findbmi() {
         bmi = weight / (height * height);
         System.out.println(" your bmi is " + bmi + "\n");
     }
 
-    void findbmr(double height, double weight, int age, String gender) {
+    void findbmr() {
         if (gender == "male")
             bmr = 66 + ((13.7) * weight) + 5 * (height * 100) - ((6.8) * age);
         else

@@ -1,6 +1,0 @@
-Name : shabari prakash
-Mobile : 8667270714
-Gender : Male
-Age : 18
-Height : 1.7
-Weight : 72
